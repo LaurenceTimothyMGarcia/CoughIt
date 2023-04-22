@@ -219,7 +219,7 @@ MonoBehaviour:
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   maxSlopeAngle: 40
   orientation: {fileID: 4633280688078813485}
   state: 0
