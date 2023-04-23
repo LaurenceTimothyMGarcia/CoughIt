@@ -148,11 +148,11 @@ namespace PlayerInput
                 transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
             }
 
-            if (horizontalInput == 0 && verticalInput == 0)
-            {
-                animator.SetBool("isWalking", false);
-                animator.SetBool("isRunning", false);
-            }
+            // if (horizontalInput == 0 && verticalInput == 0)
+            // {
+            //     animator.SetBool("isWalking", false);
+            //     animator.SetBool("isRunning", false);
+            // }
         }
 
 
@@ -173,6 +173,13 @@ namespace PlayerInput
                 moveSpeed = sprintSpeed;
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isRunning", true);
+            }
+
+            // Idle Animation
+            else if (grounded && (PlayerInputManager.Instance.getMovement().x == 0 && PlayerInputManager.Instance.getMovement().y == 0))
+            {
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isRunning", false);
             }
 
             //State - Walking

@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a013528fc42284f95444b70993fdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprintHold: 0
+  sprintHold: 1
   crouchHold: 1
 --- !u!114 &4633280687796824890
 MonoBehaviour:
