@@ -6,47 +6,52 @@ using UnityEngine.AI;
 public class NPC : MonoBehaviour
 {
     public Target indicator;
+    public Animator animator;
 
     private bool isInfected;
 
     [SerializeField] private NavMeshAgent enemy;
-    [SerializeField] private Transform player;
+    // [SerializeField] private Transform player;
 
-    [SerializeField] private LayerMask whatIsPlayer;
+    [SerializeField] private LayerMask whatIsNPC;
     [SerializeField] private LayerMask whatIsGround;
 
     //Patrol
     [SerializeField] private Vector3 walkPoint;
     [SerializeField] private float walkPointRange;
     [SerializeField] private float timeWalk;
-    [SerializeField] private float timeTaunt;
 
-    private float timerTaunt;
     private float timerWalking;
     private bool walkPointSet;
 
     [SerializeField] private float sightRange;
-    [SerializeField] private bool playerInRange;
+    [SerializeField] private bool NPCInRange;
 
     // Start is called before the first frame update
     void Start()
     {
         indicator.SetColor(Color.red);
+        animator.SetBool("isWalking", true);
+        animator.SetBool("isRunning", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerInRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        NPCInRange = Physics.CheckSphere(transform.position, sightRange, whatIsNPC);
 
-        if (playerInRange)
+        if (NPCInRange)
         {
             walkPointSet = false;
             Chase();
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isRunning", true);
         }
         else
         {
             RandomPatrol();
+            animator.SetBool("isWalking", true);
+            animator.SetBool("isRunning", false);
         }
     }
 
@@ -67,11 +72,6 @@ public class NPC : MonoBehaviour
         if (timerWalking > 0f)
         {
             timerWalking -= Time.deltaTime;
-        }
-
-        if (timerTaunt > 0f)
-        {
-            timerTaunt -= Time.deltaTime;
         }
 
         if (distanceToWalkPoint.magnitude < 1f || timerWalking <= 0f)
@@ -96,7 +96,7 @@ public class NPC : MonoBehaviour
 
     void Chase()
     {
-        enemy.SetDestination(player.position);
+        // enemy.SetDestination(player.position);
     }
 
     private void OnDrawGizmosSelected()
