@@ -11,4 +11,12 @@ public class ObjectiveMet : MonoBehaviour
     {
         finished = false;
     }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            finished = true;
+        }
+    }
 }

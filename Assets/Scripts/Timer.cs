@@ -17,6 +17,9 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime -= Time.deltaTime;
+        if (!ObjectiveMet.finished)
+        {
+            currentTime -= Time.deltaTime;
+        }
     }
 }
