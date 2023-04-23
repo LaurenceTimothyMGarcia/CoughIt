@@ -28,6 +28,7 @@ public class RollingObject : MonoBehaviour
             Vector3 playerDir = col.transform.position - new Vector3(rb.transform.position.x, col.transform.position.y, rb.transform.position.z);
             playerDir = playerDir.normalized;
             rb.AddForce((playerDir * rollSpeed), ForceMode.Impulse);
+            FindObjectOfType<AudioManager>().Play("Metal");
         }
     }
 }

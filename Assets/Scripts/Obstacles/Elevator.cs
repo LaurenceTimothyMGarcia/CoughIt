@@ -33,6 +33,7 @@ public class Elevator : MonoBehaviour
         if (col.gameObject.tag == "Player" && !isFlying)
         {
             rb.AddForce(new Vector3(0, elevatorSpeed, 0), ForceMode.Impulse);
+            FindObjectOfType<AudioManager>().Play("Elevator");
             isFlying = true;
         }
     }

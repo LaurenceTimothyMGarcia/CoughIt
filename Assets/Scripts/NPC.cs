@@ -28,6 +28,7 @@ public class NPC : MonoBehaviour
             isInfected = true;
             indicator.SetColor(Color.green);
             ScoreTracker.currentScore += 1;
+            FindObjectOfType<AudioManager>().Play("Cough");
             Debug.Log("Infected");
         }
     }

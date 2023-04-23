@@ -130,6 +130,7 @@ namespace PlayerInput
                 readyToJump = false;
 
                 Jump();
+                FindObjectOfType<AudioManager>().Play("Swoosh");
 
                 //Resets ready to jump to true after certain amount of time
                 Invoke(nameof(ResetJump), jumpCooldown);

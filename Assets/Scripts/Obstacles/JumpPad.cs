@@ -23,5 +23,6 @@ public class JumpPad : MonoBehaviour
     {
         float mass = col.gameObject.GetComponent<Rigidbody>().mass;
         col.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, repelSpeed * mass, 0), ForceMode.Impulse);
+        FindObjectOfType<AudioManager>().Play("Boing");
     }
 }
