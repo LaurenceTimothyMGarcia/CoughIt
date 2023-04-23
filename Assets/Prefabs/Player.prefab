@@ -43,6 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1176410110803702979}
+  - component: {fileID: 1607618594280549240}
   m_Layer: 0
   m_Name: Larry
   m_TagString: Untagged
@@ -67,6 +68,26 @@ Transform:
   m_Father: {fileID: 4633280687796824895}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1607618594280549240
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589096868121571686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ca87fe00d2efd1488cc18f3de365212, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3668571870928531539
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +336,7 @@ MonoBehaviour:
     m_Bits: 72
   maxSlopeAngle: 40
   orientation: {fileID: 4633280688078813485}
+  animator: {fileID: 1607618594280549240}
   state: 0
 --- !u!136 &3593118709781150044
 CapsuleCollider:
