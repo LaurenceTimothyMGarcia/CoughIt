@@ -422,7 +422,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 408420053}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: TestScene
+        m_MethodName: CPPLibrary
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
