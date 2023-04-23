@@ -60,6 +60,9 @@ namespace PlayerInput
 
         private Rigidbody rb;
 
+        // Animation variables
+        public Animator animator;
+
         //Current state of the movement state machine
         public MovementState state;
         //State machine for movement
@@ -144,6 +147,12 @@ namespace PlayerInput
                 //Resets player scale when crouch is gone
                 transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
             }
+
+            if (horizontalInput == 0 && verticalInput == 0)
+            {
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isRunning", false);
+            }
         }
 
 
@@ -162,6 +171,8 @@ namespace PlayerInput
             {
                 state = MovementState.sprinting;
                 moveSpeed = sprintSpeed;
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isRunning", true);
             }
 
             //State - Walking
@@ -169,6 +180,8 @@ namespace PlayerInput
             {
                 state = MovementState.walking;
                 moveSpeed = walkSpeed;
+                animator.SetBool("isWalking", true);
+                animator.SetBool("isRunning", false);
             }
 
             //State - Air
