@@ -27,6 +27,7 @@ public class NPC : MonoBehaviour
         {
             isInfected = true;
             indicator.SetColor(Color.green);
+            ScoreTracker.currentScore += 1;
             Debug.Log("Infected");
         }
     }
