@@ -388,7 +388,8 @@ MonoBehaviour:
   indicator: {fileID: 8401424231884869989}
   animator: {fileID: 8671314954496837280}
   enemy: {fileID: 4290558557374880431}
-  whatIsNPC:
+  player: {fileID: 0}
+  whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
   whatIsGround:
@@ -397,9 +398,8 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 30
   timeWalk: 10
-  timeTaunt: 10
   sightRange: 10
-  NPCInRange: 0
+  playerInRange: 0
 --- !u!114 &8401424231884869989
 MonoBehaviour:
   m_ObjectHideFlags: 0

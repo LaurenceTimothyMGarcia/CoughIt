@@ -11,9 +11,9 @@ public class NPC : MonoBehaviour
     private bool isInfected;
 
     [SerializeField] private NavMeshAgent enemy;
-    // [SerializeField] private Transform player;
+    [SerializeField] private Transform player;
 
-    [SerializeField] private LayerMask whatIsNPC;
+    [SerializeField] private LayerMask whatIsPlayer;
     [SerializeField] private LayerMask whatIsGround;
 
     //Patrol
@@ -25,11 +25,12 @@ public class NPC : MonoBehaviour
     private bool walkPointSet;
 
     [SerializeField] private float sightRange;
-    [SerializeField] private bool NPCInRange;
+    [SerializeField] private bool playerInRange;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player").transform;
         indicator.SetColor(Color.red);
         animator.SetBool("isWalking", true);
         animator.SetBool("isRunning", false);
@@ -38,9 +39,7 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NPCInRange = Physics.CheckSphere(transform.position, sightRange, whatIsNPC);
-
-        if (NPCInRange)
+        if (isInfected)
         {
             walkPointSet = false;
             Chase();
@@ -96,7 +95,7 @@ public class NPC : MonoBehaviour
 
     void Chase()
     {
-        // enemy.SetDestination(player.position);
+        enemy.SetDestination(player.position);
     }
 
     private void OnDrawGizmosSelected()
