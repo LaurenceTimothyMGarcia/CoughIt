@@ -12,6 +12,15 @@ public class ObjectiveMet : MonoBehaviour
         finished = false;
     }
 
+    void Update()
+    {
+        if (finished)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
