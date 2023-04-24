@@ -109,7 +109,7 @@ public class NPC : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if ((col.gameObject.tag == "Player" || col.gameObject.tag == "NPC") && !isInfected)
+        if ((col.gameObject.tag == "Player" || (col.gameObject.tag == "NPC" && col.gameObject.GetComponent<NPC>().isInfected)) && !isInfected)
         {
             isInfected = true;
             indicator.SetColor(Color.green);
