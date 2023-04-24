@@ -128,6 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67ea62a06485d349b2a9ded7b1d39ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevatorSpeed: 250
+  elevatorSpeed: 600
   elevatorHeight: 10
   rb: {fileID: 6979680373026722465}
